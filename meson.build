@@ -25,7 +25,7 @@ argtable_include_directories = [argtable_inc]
 argtable_lib = library(
   'argtable',
   argtable_src,
-  include_directories : butterfly_include_directories
+  include_directories : argtable_include_directories
 )
 
 argtable_dep = declare_dependency(
