@@ -1,5 +1,7 @@
 project('argtable3', 'c', default_options : ['c_std=c89'])
 
+m_dep = meson.get_compiler('c').find_library('m', required : true)
+
 argtable3_src = [
   './src/arg_cmd.c',
   './src/arg_date.c',
@@ -25,6 +27,7 @@ argtable3_include_directories = [argtable3_inc]
 argtable3_lib = library(
   'argtable3',
   argtable3_src,
+  dependencies : [m_dep],
   include_directories : argtable3_include_directories
 )
 
