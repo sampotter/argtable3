@@ -1,4 +1,4 @@
-project('argtable3', 'c', default_options : ['c_std=c89', 'warnlevel=3'])
+project('argtable3', 'c', default_options : ['c_std=c89'])
 
 argtable_src = [
   './src/arg_cmd.c',
