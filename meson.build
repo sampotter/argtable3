@@ -1,6 +1,6 @@
 project('argtable3', 'c', default_options : ['c_std=c89'])
 
-argtable_src = [
+argtable3_src = [
   './src/arg_cmd.c',
   './src/arg_date.c',
   './src/arg_dbl.c',
@@ -18,17 +18,17 @@ argtable_src = [
   './src/arg_getopt_long.c',
 ]
 
-argtable_inc = include_directories('src')
+argtable3_inc = include_directories('src')
 
-argtable_include_directories = [argtable_inc]
+argtable3_include_directories = [argtable3_inc]
 
-argtable_lib = library(
-  'argtable',
-  argtable_src,
-  include_directories : argtable_include_directories
+argtable3_lib = library(
+  'argtable3',
+  argtable3_src,
+  include_directories : argtable3_include_directories
 )
 
-argtable_dep = declare_dependency(
-  link_with : argtable_lib,
-  include_directories : argtable_include_directories
+argtable3_dep = declare_dependency(
+  link_with : argtable3_lib,
+  include_directories : argtable3_include_directories
 )
