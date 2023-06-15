@@ -38,6 +38,8 @@
 
 #include <stdarg.h>
 #include <stdlib.h>
+
+#define _ISOC99_SOURCE // for vsnprintf
 #include <string.h>
 
 #if defined(_MSC_VER)
