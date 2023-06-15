@@ -30,6 +30,8 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
+#define _ISOC99_SOURCE 1
+
 #include "argtable3.h"
 
 #ifndef ARG_AMALGAMATION
@@ -38,8 +40,6 @@
 
 #include <stdarg.h>
 #include <stdlib.h>
-
-#define _ISOC99_SOURCE // for vsnprintf
 #include <string.h>
 
 #if defined(_MSC_VER)
