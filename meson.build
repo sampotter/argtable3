@@ -1,5 +1,7 @@
 project('argtable3', 'c', default_options : ['c_std=c89'])
 
+pkgconfig = import('pkgconfig')
+
 m_dep = meson.get_compiler('c').find_library('m', required : true)
 
 argtable3_src = [
@@ -22,16 +24,25 @@ argtable3_src = [
 
 argtable3_inc = include_directories('src')
 
-argtable3_include_directories = [argtable3_inc]
-
 argtable3_lib = library(
   'argtable3',
   argtable3_src,
   dependencies : [m_dep],
-  include_directories : argtable3_include_directories
+  include_directories : [argtable3_inc],
+  install : true
 )
+
+install_headers('src/argtable3.h')
 
 argtable3_dep = declare_dependency(
   link_with : argtable3_lib,
-  include_directories : argtable3_include_directories
+  include_directories : [argtable3_inc]
+)
+
+pkgconfig.generate(
+  libraries : argtable3_lib,
+  version : '3.2.2',
+  name : 'argtable3',
+  filebase : 'argtable3',
+  description : 'A single-file, ANSI C, command-line parsing library that parses GNU-style command-line options.'
 )
