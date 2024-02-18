@@ -18,3 +18,8 @@ Debug/
 cmake-build-*/
 docs/_build/
 docs/xml/
+
+# GNU Global files
+GTAGS
+GRTAGS
+GPATH
